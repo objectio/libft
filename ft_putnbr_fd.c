@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 18:18:20 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/13 04:34:46 by younjkim         ###   ########.fr       */
+/*   Created: 2021/06/12 19:50:12 by younjkim          #+#    #+#             */
+/*   Updated: 2021/06/13 01:18:23 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*dst;
-	int		len;
+	long	nbr;
+	int		i;
+	char	digit[20];
 
-	len = 0;
-	while (s[len])
-		len++;
-	if ((dst = (char*)malloc(len + 1)) == NULL)
-		return (0);
-	dst[len] = 0;
-	while (--len >= 0)
-		dst[len] = s[len];
-	return (dst);
+	i = 0;
+	nbr = (long)n;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n == 0)
+		write(fd, "0", 1);
+	if (n < 0)
+	{
+		nbr = nbr * (-1);
+		write(fd, "-", 1);
+	}
+	while (nbr)
+	{
+		digit[i++] = ((nbr % 10) + '0');
+		nbr /= 10;
+	}
+	while (--i >= 0)
+		write(fd, &digit[i], 1);
 }

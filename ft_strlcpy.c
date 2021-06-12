@@ -6,7 +6,7 @@
 /*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 13:26:10 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/12 13:29:04 by younjkim         ###   ########.fr       */
+/*   Updated: 2021/06/13 04:19:48 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	len;
 
 	i = 0;
-	while (src[i] && i < size)
+	len = ft_strlen(src);
+	if (dst == NULL || src == NULL)
+		return (0);
+	while (i < len && i + 1 < size)
 	{
 		dst[i] = src[i];
-		if (i == size)
-		{
-			dst[i] = '\0';
-			break ;
-		}
 		i++;
 	}
-	while (src[i])
-		i++;
-	return (i);
+	if (size > 0)
+		dst[i] = '\0';
+	return (len);
 }

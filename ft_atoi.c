@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 18:18:20 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/13 04:34:46 by younjkim         ###   ########.fr       */
+/*   Created: 2021/06/12 22:23:26 by younjkim          #+#    #+#             */
+/*   Updated: 2021/06/12 22:56:07 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+int		ft_atoi(const char *str)
 {
-	char	*dst;
-	int		len;
+	int		i;
+	int		num;
+	int		sign;
 
-	len = 0;
-	while (s[len])
-		len++;
-	if ((dst = (char*)malloc(len + 1)) == NULL)
-		return (0);
-	dst[len] = 0;
-	while (--len >= 0)
-		dst[len] = s[len];
-	return (dst);
+	i = 0;
+	sign = 1;
+	while ((9 <= str[i] && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-')
+		sign = -1;
+	else
+		sign = 1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	num = 0;
+	while (ft_isdigit(str[i]) == 1)
+	{
+		num = 10 * num + (str[i] - '0');
+		i++;
+	}
+	return (num * sign);
 }

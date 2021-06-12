@@ -6,7 +6,7 @@
 /*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:40 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/12 17:39:33 by younjkim         ###   ########.fr       */
+/*   Updated: 2021/06/12 19:08:46 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		ft_toupper(int c)
 {
 	if (ft_isalpha(c) == 2)
-		return (c- 32);
+		return (c - 32);
 	return (c);
 }

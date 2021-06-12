@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: younjkim <younjkim@student.42seoul.k>      +#+  +:+       +#+        */
+/*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 19:41:26 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/12 19:44:57 by younjkim         ###   ########.fr       */
+/*   Created: 2021/06/12 22:06:49 by younjkim          #+#    #+#             */
+/*   Updated: 2021/06/12 23:51:03 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strrchr(const char *s, int c)
 {
+	char	*ptr;
+
+	ptr = 0;
 	while (*s)
-		write(fd, s++, 1);
+	{
+		if (*s == (char)c)
+			ptr = (char*)s;
+		s++;
+	}
+	if (!c)
+		return ((char*)s);
+	return (ptr);
 }

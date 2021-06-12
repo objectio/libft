@@ -1,0 +1,35 @@
+ft_atoi	ft_atoi.c	/^int		ft_atoi(const char *str)$/
+ft_bzero	ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/
+ft_calloc	ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/
+ft_isalnum	ft_isalnum.c	/^int		ft_isalnum(int c)$/
+ft_isalpha	ft_isalpha.c	/^int		ft_isalpha(int c)$/
+ft_isascii	ft_isascii.c	/^int		ft_isascii(int c)$/
+ft_isdigit	ft_isdigit.c	/^int		ft_isdigit(int c)$/
+ft_isprint	ft_isprint.c	/^int		ft_isprint(int c)$/
+ft_itoa	ft_itoa.c	/^char		*ft_itoa(int n)$/
+ft_len	ft_itoa.c	/^static int	ft_len(int n)$/
+ft_memccpy	ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c/
+ft_memchr	ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/
+ft_memcmp	ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, siz/
+ft_memcpy	ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t/
+ft_memmove	ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_/
+ft_memset	ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/
+ft_putchar_fd	ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/
+ft_putendl_fd	ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/
+ft_putnbr_fd	ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/
+ft_putstr_fd	ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/
+ft_split	ft_split.c	/^char	**ft_split(char const *s, char c)$/
+ft_strchr	ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/
+ft_strdup	ft_strdup.c	/^char	*ft_strdup(const char *s)$/
+ft_strjoin	ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/
+ft_strlcat	ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size/
+ft_strlcpy	ft_strlcpy.c	/^size_t	ft_strlcpy(char *dst, const char *src, size/
+ft_strlen	ft_strlen.c	/^size_t	ft_strlen(const char *str)$/
+ft_strmapi	ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned/
+ft_strncmp	ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, si/
+ft_strnstr	ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char /
+ft_strrchr	ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/
+ft_strtrim	ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/
+ft_substr	ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start,/
+ft_tolower	ft_tolower.c	/^int		ft_tolower(int c)$/
+ft_toupper	ft_toupper.c	/^int		ft_toupper(int c)$/

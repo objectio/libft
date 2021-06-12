@@ -6,7 +6,7 @@
 /*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:42:20 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/12 13:33:12 by younjkim         ###   ########.fr       */
+/*   Updated: 2021/06/13 07:13:14 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	i;
 	int		flag;
 
+	if (c == 0 || n == 0 || dst == NULL)
+		return (0);
 	i = 0;
 	flag = 0;
 	while (i < n && ((unsigned char *)src)[i] && !flag)

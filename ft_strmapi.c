@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: younjkim <younjkim@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: younjkim <younjkim@42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 18:18:20 by younjkim          #+#    #+#             */
-/*   Updated: 2021/06/13 04:34:46 by younjkim         ###   ########.fr       */
+/*   Created: 2021/06/13 04:21:56 by younjkim          #+#    #+#             */
+/*   Updated: 2021/06/13 05:06:40 by younjkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*dst;
-	int		len;
+	size_t	len;
+	size_t	i;
+	char	*ptr;
 
-	len = 0;
-	while (s[len])
-		len++;
-	if ((dst = (char*)malloc(len + 1)) == NULL)
+	i = 0;
+	if (s == 0)
 		return (0);
-	dst[len] = 0;
-	while (--len >= 0)
-		dst[len] = s[len];
-	return (dst);
+	len = ft_strlen(s);
+	if ((ptr = (char*)malloc(len + 1)) == NULL)
+		return (0);
+	while (i < len)
+	{
+		ptr[i] = f(i, s[i]);
+		i++;
+	}
+	ptr[i] = 0;
+	return (ptr);
 }
